@@ -28,6 +28,13 @@ gem 'spring',        group: :development
 
 gem 'faker'
 
+gem 'rspec-rails'
+
+gem 'guard'
+gem 'guard-rspec'
+gem 'guard-bundler'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
