@@ -1,0 +1,15 @@
+.container
+  =link_to 'NEW', new_note_path, class: 'btn btn-danger pull-right'
+  h1 SHOWING ALL NOTES
+  table.table.table-striped 
+    thead
+      th Title
+      th Text
+      th Actions
+    -@notes.each do |n|
+      tr
+        td=n.title
+        td=n.text
+        td
+          =link_to 'VIEW', note_path(n), class: 'btn btn-primary'
+          =link_to 'EDIT', edit_note_path(n), class: 'btn btn-info'

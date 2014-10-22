@@ -32,10 +32,4 @@ describe UsersController, type: :controller do
       expect(user.reload.name).to eq 'John Doe'
     end
   end
-
-  describe "DELETE destroy" do
-    it "destroys user" do
-      expect{ delete :destroy, id: user.id }.to change { User.count }.by(-1)
-    end
-  end
 end

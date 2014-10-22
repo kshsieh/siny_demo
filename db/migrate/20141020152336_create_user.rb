@@ -5,6 +5,7 @@ class CreateUser < ActiveRecord::Migration
       t.string  :email
       t.string  :phone_number
       t.integer :age
+      t.string  :gender
     end
   end
 end

@@ -12,7 +12,8 @@
 #  password_confirmation :text
 #
 
-class User < ActiveRecord::Base
-  has_many :notes
-  # TODO: add phone number sanitization logic here
+require 'rails_helper'
+
+describe User, type: :model do
+  it "has many notes"
 end

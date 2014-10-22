@@ -29,6 +29,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def delete
+    # TODO: finish this
+  end
+
   private
 
   def user_params
