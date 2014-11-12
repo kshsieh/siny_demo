@@ -14,5 +14,10 @@
 
 class User < ActiveRecord::Base
   has_many :notes
-  # TODO: add phone number sanitization logic here
+  has_many :likes
+  has_many :liked_posts, through: :likes, source: :post
+
+  def like!(post)
+    likes.create(post_id: post.id) 
+  end
 end

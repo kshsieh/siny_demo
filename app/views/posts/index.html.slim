@@ -1,0 +1,21 @@
+.container
+  .pull-right Hi #{current_user.name}
+  h1 Your Feed
+  table.table.table-striped
+    thead
+      th Title
+      th Body
+      th Liked Count
+      th Who Liked This Post?
+      th Actions
+    - @posts.each do |p|
+      tr
+        td= p.title
+        td= p.body
+        td= p.likes.count
+        td= p.likes.map { |l| l.user.name }.join(" ")
+        td
+          = form_tag('likes', method: 'post') do |f|
+            = hidden_field_tag 'user_id', current_user.id
+            = hidden_field_tag 'post_id', p.id
+            = submit_tag 'LIKE', class: 'btn btn-primary'
